@@ -52,9 +52,10 @@ if [ ! -d "$ARDUINO_IDE_PATH" ]; then
 	echo "Installing Arduino IDE on $OS_NAME ..."
 	echo "Downloading 'arduino-nightly-$OS_NAME.$ARCHIVE_FORMAT' to 'arduino.$ARCHIVE_FORMAT' ..."
 	if [ "$OS_IS_LINUX" == "1" ]; then
-		wget -O "arduino.$ARCHIVE_FORMAT" "https://www.arduino.cc/download.php?f=/arduino-ide_nightly-latest_Linux_64bit.$ARCHIVE_FORMAT" > /dev/null 2>&1
+		wget -O "arduino.$ARCHIVE_FORMAT" "https://downloads.arduino.cc/arduino-ide/nightly/arduino-ide_nightly-latest_Linux_64bit.$ARCHIVE_FORMAT" > /dev/null 2>&1
 		echo "Extracting 'arduino.$ARCHIVE_FORMAT' ..."
-		tar xf "arduino.$ARCHIVE_FORMAT" > /dev/null
+		unzip "arduino.$ARCHIVE_FORMAT" > /dev/null
+		mv arduino-ide_nightly* arduino-nightly
 		mv arduino-nightly "$ARDUINO_IDE_PATH"
 	else
 		curl -o "arduino.$ARCHIVE_FORMAT" -L "https://www.arduino.cc/download.php?f=/arduino-nightly-$OS_NAME.$ARCHIVE_FORMAT" > /dev/null 2>&1
