@@ -7,7 +7,7 @@
 OSBITS=`arch`
 if [[ "$OSTYPE" == "linux"* ]]; then
 	export OS_IS_LINUX="1"
-	ARCHIVE_FORMAT="tar.xz"
+	ARCHIVE_FORMAT="zip"
 	if [[ "$OSBITS" == "i686" ]]; then
 		OS_NAME="linux32"
 	elif [[ "$OSBITS" == "x86_64" ]]; then
@@ -52,7 +52,7 @@ if [ ! -d "$ARDUINO_IDE_PATH" ]; then
 	echo "Installing Arduino IDE on $OS_NAME ..."
 	echo "Downloading 'arduino-nightly-$OS_NAME.$ARCHIVE_FORMAT' to 'arduino.$ARCHIVE_FORMAT' ..."
 	if [ "$OS_IS_LINUX" == "1" ]; then
-		wget -O "arduino.$ARCHIVE_FORMAT" "https://www.arduino.cc/download.php?f=/arduino-nightly-$OS_NAME.$ARCHIVE_FORMAT" > /dev/null 2>&1
+		wget -O "arduino.$ARCHIVE_FORMAT" "https://www.arduino.cc/download.php?f=/arduino-ide_nightly-latest_Linux_64bit.$ARCHIVE_FORMAT" > /dev/null 2>&1
 		echo "Extracting 'arduino.$ARCHIVE_FORMAT' ..."
 		tar xf "arduino.$ARCHIVE_FORMAT" > /dev/null
 		mv arduino-nightly "$ARDUINO_IDE_PATH"
