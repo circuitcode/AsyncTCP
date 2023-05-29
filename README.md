@@ -1,6 +1,6 @@
 # AsyncTCP
 
-[![Build Status](https://travis-ci.org/circuitcode/AsyncTCP.svg?branch=master)](https://travis-ci.org/circuitcode/AsyncTCP) ![](https://github.com/circuitcode/AsyncTCP/workflows/Async%20TCP%20CI/badge.svg)
+[![Async TCP CI](https://github.com/circuitcode/AsyncTCP/actions/workflows/push.yml/badge.svg)](https://github.com/circuitcode/AsyncTCP/actions/workflows/push.yml)
 
 ### Async TCP Library for ESP32 Arduino
 
